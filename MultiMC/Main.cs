@@ -336,12 +336,20 @@ namespace MultiMC
 			instNameDialog.MoveToDefPosition();
 
 			bool okClicked = false;
+            string instName = "unset";
+
+            // FIXME
+            // For some reason it was always returning the empty string from the
+            // GTK widget. I suspect it might have been destroyed by the time we
+            // inspect it. So I saved it with a handler instead.
 			instNameDialog.Response += (o, args) =>
 				okClicked = args.Response == DialogResponse.OK;
+			instNameDialog.Response += (o, args) =>
+                instName = instNameDialog.Input;
 
 			instNameDialog.Run();
 
-			return (okClicked ? instNameDialog.Input : null);
+			return (okClicked ? instName : null);
 		}
 
 		void ViewFolderClicked(object sender, EventArgs e)

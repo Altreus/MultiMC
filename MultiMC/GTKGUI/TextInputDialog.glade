@@ -26,31 +26,5 @@
         <property name="position">1</property>
       </packing>
     </child>
-    <child>
-      <widget class="GtkHBox" id="buttonLayout">
-        <property name="visible">True</property>
-        <child>
-          <widget class="GtkButton" id="cancelButton">
-            <property name="visible">True</property>
-            <property name="label" translatable="yes">Cancel</property>
-          </widget>
-          <packing>
-            <property name="position">3</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="GtkButton" id="okButton">
-            <property name="visible">True</property>
-            <property name="label" translatable="yes">OK</property>
-          </widget>
-          <packing>
-            <property name="position">4</property>
-          </packing>
-        </child>
-      </widget>
-      <packing>
-        <property name="position">2</property>
-      </packing>
-    </child>
   </widget>
 </glade-interface>

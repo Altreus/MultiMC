@@ -28,11 +28,13 @@ namespace MultiMC.GTKGUI
 				"vboxTextInput", null);
 			gxml.Autoconnect(this);
 
-			this.Remove(this.VBox);
-			this.Add(vboxTextInput);
+			this.VBox.PackStart(vboxTextInput);
 
 			WidthRequest = 400;
 			HeightRequest = 110;
+
+			AddButton("_Cancel", ResponseType.Cancel);
+			AddButton("_OK", ResponseType.Ok);
 
             textMessage.Text = message;
             textInput.Text = text;
@@ -46,7 +48,9 @@ namespace MultiMC.GTKGUI
 
 		public string Input
 		{
-			get { return textInput.Text; }
+			get {
+                Console.WriteLine(textInput.Text == null ? "NULL" : textInput.Text);
+                return textInput.Text; }
 			set { textInput.Text = value; }
 		}
 
